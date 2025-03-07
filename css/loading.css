@@ -1,0 +1,26 @@
+{
+    box-sizing: border-box;
+  }
+
+  body {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+  }
+
+  .bg {
+      background-image: url('../images/cat1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100vw;
+      height: 100vh;
+  }
+
+  .loading-text {
+      position: absolute;
+      font-size: 50px;
+  }
+  css
