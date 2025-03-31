@@ -1,0 +1,126 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ADD8E6;
+    color: #000000;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    font-family: Bytesized;
+
+}
+
+h1 {
+    line-height: 1.4;
+}
+
+.btn {
+    border: 0;
+    background-color: #B3EBF2;
+    color: #000000;
+    padding: 15px 20px;
+    font-family: Bytesized;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.5;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    transition: ease 1s
+}
+
+.screen.up {
+    margin-top: -100vh;
+}
+
+.insects-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 115px;
+}
+
+.choose-insect-btn {
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    font-family: Bytesized;
+    width: 7px;
+    height: 7px;
+}
+
+img {
+    width: 100px;
+    height: auto;
+}
+
+.choose-insect-btn:hover {
+    opacity: 0.6;
+}
+
+.game-container {
+    position: relative;
+}
+
+.time, .score {
+    position: absolute;
+    left: 20px;
+}
+
+.score {
+    top: 20px;
+}
+
+.time {
+    top: 5px;
+}
+
+.message {
+    color: #FFF;
+    line-height: 1.2;
+    padding: 20px;
+    z-index: 2;
+    text-align: center;
+    position: absolute;
+    top: 75%;
+    opacity: 0;
+    font-family: Bytesized;
+    z-index: -100;
+    font-size: 30px;
+}
+
+.message.visible {
+    opacity: 1;
+    z-index: 1;
+}
+
+.insect {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.insect.caught{
+    scale: 0;
+}
