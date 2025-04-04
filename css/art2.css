@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #87CEEB; /* Sky blue background */
+}
+.fish-tank {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background: linear-gradient(to bottom, #00BFFF, #1E90FF);
+    border: 5px solid #000;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.sand {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: #F4A460;
+}
+.rock {
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    width: 50px;
+    height: 30px;
+    background: #808080;
+    border-radius: 50%;
+}
+.fish {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    border-radius: 50%;
+    animation: swim 5s infinite linear;
+}
+.fish::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: -15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #000;
+}
+.fish1 {
+    background: orange;
+    top: 50px;
+    left: 100px;
+}
+.fish2 {
+    background: red;
+    top: 150px;
+    left: 200px;
+    animation-duration: 6s;
+}
+.fish3 {
+    background: yellow;
+    top: 100px;
+    left: 300px;
+    animation-duration: 4s;
+}
+.fish4 {
+    background: blue;
+    top: 200px;
+    left: 400px;
+    animation-duration: 7s;
+}
+.fish5 {
+    background: green;
+    top: 250px;
+    left: 150px;
+    animation-duration: 5.5s;
+}
+

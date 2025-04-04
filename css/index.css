@@ -1,0 +1,35 @@
+header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+header {
+    background-image: url('images/cat1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
