@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .word {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .input {
+            padding: 10px;
+            font-size: 18px;
+            width: 300px;
+        }
+        .score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Typing Game</h1>
+        <div class="word" id="word"></div>
+        <input type="text" id="input" class="input" placeholder="Type here..." />
+        <div class="score" id="score">Score: 0</div>
+    </div>
+
+    <script>
+        const words = ["javascript", "html", "css", "coding", "developer", "keyboard", "function", "variable"];
+        let currentWord = "";
+        let score = 0;
+
+        const wordElement = document.getElementById("word");
+        const inputElement = document.getElementById("input");
+        const scoreElement = document.getElementById("score");
+
+        function getRandomWord() {
+            return words[Math.floor(Math.random() * words.length)];
+        }
+
+        function setNewWord() {
+            currentWord = getRandomWord();
+            wordElement.textContent = currentWord;
+            inputElement.value = "";
+        }
+
+        inputElement.addEventListener("input", () => {
+            if (inputElement.value === currentWord) {
+                score++;
+                scoreElement.textContent = `Score: ${score}`;
+                setNewWord();
+            }
+        });
+
+        // Initialize the game
+        setNewWord();
+    </script>
+</body>
+</html>
