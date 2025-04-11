@@ -48,11 +48,14 @@ body {
     border-width: 10px 0 10px 15px;
     border-color: transparent transparent transparent #000;
     transform: rotate(180deg);
+    animation: swim 5s infinite ease-in-out;
 }
 .fish1 {
     background: orange;
     top: 50px;
     left: 100px;
+    animation-duration: 5s;
+
 }
 .fish2 {
     background: red;
@@ -77,5 +80,17 @@ body {
     top: 250px;
     left: 150px;
     animation-duration: 5.5s;
+}
+
+@keyframes swim {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 

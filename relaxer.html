@@ -1,114 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relaxer</title>
-    <style>
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(to bottom, #89f7fe, #66a6ff);
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
 
-        .container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>relaxer</title>
+        <link rel="stylesheet" href="css/relaxer.css">
+    </head>
 
-        .ball {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100px;
-            height: 100px;
-            background-color: white;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-            animation: breathe 9s infinite;
-        }
+    <body>
+        <h1>Relaxer</h1>
 
-        .orbit {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 200px;
-            height: 200px;
-            border: 2px dashed rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-        }
+        <div class="container" id="container">
+            <div class="circle"></div>
 
-        .orbit-ball {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 20px;
-            height: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            animation: orbit 9s infinite linear;
-        }
+            <p id="text">Breathe In</p>
 
-        @keyframes breathe {
-            0%, 100% {
-                width: 100px;
-                height: 100px;
-            }
-            25% {
-                width: 150px;
-                height: 150px;
-            }
-            50% {
-                width: 150px;
-                height: 150px;
-            }
-            75% {
-                width: 100px;
-                height: 100px;
-            }
-        }
+            <div class="pointer-container">
+                <span class="pointer"></span>
+            </div>
 
-        @keyframes orbit {
-            0% {
-                transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(0deg);
-            }
-            100% {
-                transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg);
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="ball" id="ball">Breathe</div>
-        <div class="orbit">
-            <div class="orbit-ball"></div>
+            <div class="gradient-circle"></div>
         </div>
-    </div>
 
-    <script>
-        const ball = document.getElementById('ball');
-        const phases = ['Breathe', 'Hold', 'Exhale'];
-        let phaseIndex = 0;
+        <script src="js/relaxer.js"></script>
 
-        setInterval(() => {
-            phaseIndex = (phaseIndex + 1) % phases.length;
-            ball.textContent = phases[phaseIndex];
-        }, 3000 * phases.length); // Adjust interval to match animation duration
-    </script>
-</body>
+    </body>
+
 </html>

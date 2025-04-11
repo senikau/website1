@@ -3,79 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bouncing Ball Game</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-        canvas {
-            display: block;
-        }
-        #score {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 20px;
-            color: white;
-        }
-    </style>
+    <title>ball</title>
 </head>
 <body>
-    <div id="score">Score: 0</div>
-    <canvas id="gameCanvas"></canvas>
-    <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-        const scoreDisplay = document.getElementById('score');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        let ball = {
-            x: canvas.width / 2,
-            y: canvas.height / 2,
-            radius: 15,
-            dx: 4,
-            dy: 4,
-            color: 'red'
-        };
-
-        let score = 0;
-
-        function drawBall() {
-            ctx.beginPath();
-            ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
-            ctx.fillStyle = ball.color;
-            ctx.fill();
-            ctx.closePath();
-        }
-
-        function update() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Move the ball
-            ball.x += ball.dx;
-            ball.y += ball.dy;
-
-            // Check for collisions with walls
-            if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
-                ball.dx *= -1;
-                score++;
-            }
-            if (ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
-                ball.dy *= -1;
-                score++;
-            }
-
-            // Update score display
-            scoreDisplay.textContent = `Score: ${score}`;
-
-            drawBall();
-            requestAnimationFrame(update);
-        }
-
-        update();
-    </script>
+    <script src="ball.js"></script>
 </body>
 </html>
